@@ -11,6 +11,9 @@ class KickChat {
   Function()? onDone;
   final Function? onError;
 
+  final StreamController _chatStreamController = StreamController.broadcast();
+  Stream get chatStream => _chatStreamController.stream;
+
   KickChat(
     this.chatroomId, {
     this.onDone,
@@ -52,6 +55,6 @@ class KickChat {
   }
 
   void _chatListener(String message) {
-    debugPrint(message);
+    _chatStreamController.add(message);
   }
 }
