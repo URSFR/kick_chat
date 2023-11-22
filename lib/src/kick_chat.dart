@@ -5,18 +5,17 @@ import 'package:web_socket_channel/io.dart';
 
 class KickChat {
   String chatroomId;
-  
+
   IOWebSocketChannel? _webSocketChannel;
   StreamSubscription? _streamSubscription;
   Function()? onDone;
   final Function? onError;
 
   KickChat(
-    this.chatroomId,
-    {
+    this.chatroomId, {
     this.onDone,
-    this.onError,}
-  );
+    this.onError,
+  });
 
   void connect() {
     _webSocketChannel = IOWebSocketChannel.connect(
