@@ -7,7 +7,7 @@ import 'package:kick_chat/src/event_parser.dart';
 
 void main() {
   test('Listen to a random Kick chat', () async {
-    KickChat chat = KickChat('668');
+    KickChat chat = KickChat('xqc');
     chat.connect();
     chat.chatStream.listen((message) {
       final KickMessage? kickMessage = eventParser(message);

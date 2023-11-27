@@ -89,7 +89,7 @@ class Sender {
 
 class Identity {
   final String color;
-  final List<Badge> badges;
+  final List<UserBadge> badges;
 
   Identity({
     required this.color,
@@ -97,9 +97,9 @@ class Identity {
   });
 
   factory Identity.fromJson(Map<String, dynamic> map) {
-    List<Badge> badges = [];
+    List<UserBadge> badges = [];
     for (var badge in map['badges']) {
-      badges.add(Badge.fromJson(badge));
+      badges.add(UserBadge.fromJson(badge));
     }
     return Identity(
       color: map['color'],
@@ -113,19 +113,19 @@ class Identity {
   }
 }
 
-class Badge {
+class UserBadge {
   final String type;
   final String text;
   final int count;
 
-  Badge({
+  UserBadge({
     required this.type,
     required this.text,
     required this.count,
   });
 
-  factory Badge.fromJson(Map<String, dynamic> map) {
-    return Badge(
+  factory UserBadge.fromJson(Map<String, dynamic> map) {
+    return UserBadge(
       type: map['type'],
       text: map['text'],
       count: map['count'],

@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:kick_chat/src/kick_channel.dart';
 import 'package:web_socket_channel/io.dart';
 
 class KickChat {
-  String chatroomId;
+  String channelName;
+  String? chatroomId;
 
   IOWebSocketChannel? _webSocketChannel;
   StreamSubscription? _streamSubscription;
@@ -15,16 +17,23 @@ class KickChat {
   Stream get chatStream => _chatStreamController.stream;
 
   KickChat(
-    this.chatroomId, {
+    this.channelName, {
     this.onDone,
     this.onError,
   });
 
-  void connect() {
+  Future<void> connect() async {
+
+    KickChannel? channel = await KickChannel.getChannelInfo(channelName);
+
+    if(channel == null) {
+      return;
+    }
+
     _webSocketChannel = IOWebSocketChannel.connect(
         "wss://ws-us2.pusher.com/app/eb1d5f283081a78b932c?protocol=7&client=js&version=7.6.0&flash=false");
     _webSocketChannel?.sink.add(
-        '{"event":"pusher:subscribe","data":{"auth":"","channel":"chatrooms.$chatroomId.v2"}}');
+        '{"event":"pusher:subscribe","data":{"auth":"","channel":"chatrooms.${channel.chatroom.chatableId}.v2"}}');
 
     _streamSubscription = _webSocketChannel?.stream.listen(
       (data) => _chatListener(data),

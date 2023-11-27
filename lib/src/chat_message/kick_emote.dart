@@ -1,1 +1,6 @@
-// https://kick.com/emotes/xqc
+
+class KickEmote {
+  void getEmotes () {
+    // https://kick.com/emotes/xqc
+  }
+}
