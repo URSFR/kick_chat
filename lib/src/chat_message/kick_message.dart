@@ -1,8 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
-import 'package:kick_chat/src/kick_badge.dart';
-
 class KickMessage {
   final String event;
   final Data data;
@@ -15,12 +12,16 @@ class KickMessage {
   });
 
   factory KickMessage.fromJson(Map<String, dynamic> map) {
-    debugPrint(map.toString());
     return KickMessage(
       event: map['event'],
       data: Data.fromJson(jsonDecode(map['data'])),
       channel: map['channel'],
     );
+  }
+
+  @override
+  String toString() {
+    return 'event: $event, data: $data, channel: $channel';
   }
 }
 
@@ -48,8 +49,13 @@ class Data {
       content: map['content'],
       type: map['type'],
       createdAt: map['created_at'],
-      sender: Sender.fromJson(jsonDecode(map['sender'])),
+      sender: Sender.fromJson(map['sender']),
     );
+  }
+
+  @override
+  String toString() {
+    return 'id: $id, chatroomId: $chatroomId, content: $content, type: $type, createdAt: $createdAt, sender: $sender';
   }
 }
 
@@ -71,14 +77,19 @@ class Sender {
       id: map['id'],
       username: map['username'],
       slug: map['slug'],
-      identity: Identity.fromJson(jsonDecode(map['identity'])),
+      identity: Identity.fromJson(map['identity']),
     );
+  }
+
+  @override
+  String toString() {
+    return 'id: $id, username: $username, slug: $slug, identity: $identity';
   }
 }
 
 class Identity {
   final String color;
-  final List<KickBadge> badges;
+  final List<Badge> badges;
 
   Identity({
     required this.color,
@@ -86,9 +97,43 @@ class Identity {
   });
 
   factory Identity.fromJson(Map<String, dynamic> map) {
+    List<Badge> badges = [];
+    for (var badge in map['badges']) {
+      badges.add(Badge.fromJson(badge));
+    }
     return Identity(
       color: map['color'],
-      badges: [],
+      badges: badges,
     );
+  }
+
+  @override
+  String toString() {
+    return 'color: $color, badges: $badges';
+  }
+}
+
+class Badge {
+  final String type;
+  final String text;
+  final int count;
+
+  Badge({
+    required this.type,
+    required this.text,
+    required this.count,
+  });
+
+  factory Badge.fromJson(Map<String, dynamic> map) {
+    return Badge(
+      type: map['type'],
+      text: map['text'],
+      count: map['count'],
+    );
+  }
+
+  @override
+  String toString() {
+    return 'type: $type, text: $text, count: $count';
   }
 }
