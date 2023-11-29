@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-class KickMessage {
+import 'package:kick_chat/src/kick_event.dart';
+
+class KickMessage extends KickEvent {
   final String event;
   final Data data;
   final String channel;
@@ -9,7 +11,7 @@ class KickMessage {
     required this.event,
     required this.data,
     required this.channel,
-  });
+  }) : super(event: event, channel: channel);
 
   factory KickMessage.fromJson(Map<String, dynamic> map) {
     return KickMessage(
