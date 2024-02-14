@@ -40,7 +40,7 @@ class KickChat {
   }
 
   Future<void> _onDone() async {
-    debugPrint("Twitch Chat: Connection closed");
+    debugPrint("Kick Chat: Connection closed");
     await close();
     if (onDone != null) {
       onDone!();

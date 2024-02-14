@@ -3,14 +3,12 @@ import 'dart:convert';
 import 'package:kick_chat/src/kick_event.dart';
 
 class KickMessage extends KickEvent {
-  final String event;
   final Data data;
-  final String channel;
 
   KickMessage({
-    required this.event,
+    event,
     required this.data,
-    required this.channel,
+    channel,
   }) : super(event: event, channel: channel);
 
   factory KickMessage.fromJson(Map<String, dynamic> map) {
@@ -130,7 +128,7 @@ class UserBadge {
     return UserBadge(
       type: map['type'],
       text: map['text'],
-      count: map['count'],
+      count: map['count'] ?? 0,
     );
   }
 

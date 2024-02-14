@@ -3,14 +3,12 @@ import 'dart:convert';
 import 'package:kick_chat/src/kick_event.dart';
 
 class KickFollowersUpdated extends KickEvent {
-  final String event;
   final Data data;
-  final String channel;
 
   KickFollowersUpdated({
-    required this.event,
+    event,
     required this.data,
-    required this.channel,
+    channel,
   }) : super(event: event, channel: channel);
 
   factory KickFollowersUpdated.fromJson(Map<String, dynamic> map) {

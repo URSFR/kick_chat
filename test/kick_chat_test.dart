@@ -7,8 +7,9 @@ import 'package:kick_chat/src/kick_event.dart';
 
 
 void main() {
-  test('Listen to a random Kick chat', () async {
-    KickChat chat = KickChat('668');
+  String chatRoomId = '1033493';
+  test('Listen to a Kick chat', () async {
+    KickChat chat = KickChat(chatRoomId);
     chat.connect();
     chat.chatStream.listen((message) {
       final KickEvent? kickEvent = eventParser(message);
@@ -19,6 +20,6 @@ void main() {
       }
     });
     await Future.delayed(const Duration(seconds: 300), () {});
-  });
+  }, timeout: const Timeout.factor(20));
 
 }
