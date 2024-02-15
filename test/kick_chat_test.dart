@@ -7,13 +7,13 @@ import 'package:kick_chat/src/kick_event.dart';
 
 
 void main() {
-  String chatRoomId = '1033493';
+  String chatRoomId = '3165515';
   test('Listen to a Kick chat', () async {
     KickChat chat = KickChat(chatRoomId);
     chat.connect();
     chat.chatStream.listen((message) {
       final KickEvent? kickEvent = eventParser(message);
-      if(kickEvent?.event == 'App\\Events\\ChatMessageEvent'){
+      if(kickEvent?.event == TypeEvent.message){
         if (kDebugMode) {
           print(kickEvent as KickMessage);
         }

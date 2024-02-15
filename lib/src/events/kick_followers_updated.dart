@@ -1,19 +1,22 @@
 import 'dart:convert';
 
 import 'package:kick_chat/src/kick_event.dart';
+import 'package:kick_chat/src/utils/string_to_event.dart';
 
 class KickFollowersUpdated extends KickEvent {
+  final TypeEvent event;
   final Data data;
+  final String channel;
 
   KickFollowersUpdated({
-    event,
+    required this.event,
     required this.data,
-    channel,
+    required this.channel,
   }) : super(event: event, channel: channel);
 
   factory KickFollowersUpdated.fromJson(Map<String, dynamic> map) {
     return KickFollowersUpdated(
-      event: map['event'],
+      event: stringToEvent(map['event']),
       data: Data.fromJson(jsonDecode(map['data'])),
       channel: map['channel'],
     );

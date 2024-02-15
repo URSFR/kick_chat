@@ -1,5 +1,10 @@
+enum TypeEvent {
+  message,
+  followersUpdated,
+}
+
 class KickEvent {
-  final String event;
+  final TypeEvent event;
   final String channel;
 
   KickEvent({
