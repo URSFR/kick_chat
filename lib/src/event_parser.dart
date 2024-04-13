@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:kick_chat/src/events/kick_followers_updated.dart';
 import 'package:kick_chat/src/events/kick_message.dart';
 import 'package:kick_chat/src/kick_event.dart';
@@ -8,7 +7,6 @@ import 'package:kick_chat/src/utils/string_to_event.dart';
 
 KickEvent? eventParser(String message) {
   Map<String, dynamic> jsonMessage = jsonDecode(message);
-  debugPrint(jsonMessage.toString());
   switch (stringToEvent(jsonMessage['event'])){
     case TypeEvent.message:
       return KickMessage.fromJson(jsonMessage);
