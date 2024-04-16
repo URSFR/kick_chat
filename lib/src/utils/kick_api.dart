@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
@@ -13,7 +14,7 @@ class KickApi {
       response = await dio.get(
         "https://kick.com/api/v2/channels/$username",
       );
-      return response.data['id'];
+      return jsonDecode(response.data)['id'];
     } on DioException catch (e) {
       debugPrint(e.toString());
       return null;
