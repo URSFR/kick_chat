@@ -9,7 +9,9 @@ class KickChat {
 
   IOWebSocketChannel? _webSocketChannel;
   StreamSubscription? _streamSubscription;
-  KickUser? userDetails;
+
+  KickUser? _userDetails;
+  KickUser? get userDetails => _userDetails;
 
   Function()? onDone;
   final Function? onError;
@@ -24,7 +26,7 @@ class KickChat {
   });
 
   Future<void> connect() async {
-    userDetails = await KickApi.getUserDetails(username);
+    _userDetails = await KickApi.getUserDetails(username);
     if(userDetails == null) {
       return;
     }
