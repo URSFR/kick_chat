@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:kick_chat/src/entities/kick_user.dart';
 
 class KickApi {
-  static Future<int?> getChannelId(
+  static Future<KickUser?> getUserDetails(
     String username,
   ) async {
     Response response;
@@ -14,7 +15,7 @@ class KickApi {
       response = await dio.get(
         "https://kick.com/api/v2/channels/$username",
       );
-      return jsonDecode(response.data)['id'];
+      return KickUser.fromJson(jsonDecode(response.data)) ;
     } on DioException catch (e) {
       debugPrint(e.toString());
       return null;

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:kick_chat/src/entities/kick_user.dart';
 import 'package:web_socket_channel/io.dart';
 
 class KickChat {
@@ -8,6 +9,8 @@ class KickChat {
 
   IOWebSocketChannel? _webSocketChannel;
   StreamSubscription? _streamSubscription;
+  KickUser? userDetails;
+
   Function()? onDone;
   final Function? onError;
 
