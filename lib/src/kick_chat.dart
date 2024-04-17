@@ -30,12 +30,10 @@ class KickChat {
       return;
     }
 
-    debugPrint(userDetails!.id.toString());
-
     _webSocketChannel = IOWebSocketChannel.connect(
         "wss://ws-us2.pusher.com/app/eb1d5f283081a78b932c?protocol=7&client=js&version=7.6.0&flash=false");
     _webSocketChannel?.sink.add(
-        '{"event":"pusher:subscribe","data":{"auth":"","channel":"chatrooms.${userDetails!.id}.v2"}}');
+        '{"event":"pusher:subscribe","data":{"auth":"","channel":"chatrooms.${userDetails!.chatRoom.id}.v2"}}');
 
     _streamSubscription = _webSocketChannel?.stream.listen(
       (data) => _chatListener(data),
