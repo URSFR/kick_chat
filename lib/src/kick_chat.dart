@@ -30,6 +30,8 @@ class KickChat {
       return;
     }
 
+    debugPrint(userDetails!.id.toString());
+
     _webSocketChannel = IOWebSocketChannel.connect(
         "wss://ws-us2.pusher.com/app/eb1d5f283081a78b932c?protocol=7&client=js&version=7.6.0&flash=false");
     _webSocketChannel?.sink.add(

@@ -6,6 +6,7 @@ class KickUser {
   final String slug;
   final int followersCount;
   final List<KickBadge> subBadges;
+  final ChatRoom chatRoom;
 
   KickUser({
     required this.id,
@@ -13,6 +14,7 @@ class KickUser {
     required this.slug,
     required this.followersCount,
     required this.subBadges,
+    required this.chatRoom,
   });
 
   factory KickUser.fromJson(Map<String, dynamic> map) {
@@ -26,6 +28,21 @@ class KickUser {
       slug: map['slug'],
       followersCount: map['followers_count'],
       subBadges: subBadges,
+      chatRoom: ChatRoom.fromJson(map['chatroom'])
+    );
+  }
+}
+
+class ChatRoom {
+  final int id;
+
+  ChatRoom({
+    required this.id,
+  });
+
+  factory ChatRoom.fromJson(Map<String, dynamic> map) {
+    return ChatRoom(
+      id: map['id'],
     );
   }
 }

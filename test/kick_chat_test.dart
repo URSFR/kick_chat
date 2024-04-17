@@ -4,7 +4,7 @@ import 'package:kick_chat/kick_chat.dart';
 
 
 void main() {
-  String username = 'xqc';
+  String username = 'yourrage';
   test('Listen to a Kick chat', () async {
     KickChat chat = KickChat(username);
     chat.connect();
