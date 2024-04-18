@@ -48,7 +48,7 @@ class Data {
 }
 
 class Message {
-  final int id;
+  final String id;
 
   Message({
     required this.id,
