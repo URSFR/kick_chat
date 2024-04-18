@@ -32,6 +32,8 @@ class KickChat {
 
     _webSocketChannel = IOWebSocketChannel.connect(
         "wss://ws-us2.pusher.com/app/eb1d5f283081a78b932c?protocol=7&client=js&version=7.6.0&flash=false");
+    // _webSocketChannel?.sink.add(
+    //     '{"event":"pusher:subscribe","data":{"auth":"","channel":"channel.${userDetails!.id}"}}');
     _webSocketChannel?.sink.add(
         '{"event":"pusher:subscribe","data":{"auth":"","channel":"chatrooms.${userDetails!.chatRoom.id}.v2"}}');
 

@@ -1,6 +1,9 @@
 enum TypeEvent {
   message,
   followersUpdated,
+  streamHostEvent,
+  subscriptionEvent,
+  chatroomUpdatedEvent,
 }
 
 class KickEvent {
