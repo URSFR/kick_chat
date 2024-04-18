@@ -34,7 +34,7 @@ class Data {
 
   factory Data.fromJson(Map<String, dynamic> map) {
     return Data(
-      poll: map['idpoll'],
+      poll: Poll.fromJson(map['poll']),
     );
   }
 
