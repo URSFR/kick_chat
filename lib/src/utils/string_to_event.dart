@@ -12,6 +12,8 @@ TypeEvent? stringToEvent(String s) {
       return TypeEvent.chatroomUpdatedEvent;
     case 'App\\Events\\StreamHostEvent':
       return TypeEvent.streamHostEvent;
+    case 'App\\Events\\UserBannedEvent':
+      return TypeEvent.userBannedEvent;
     default:
       return null;
   }

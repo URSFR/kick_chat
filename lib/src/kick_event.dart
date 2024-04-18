@@ -4,6 +4,7 @@ enum TypeEvent {
   streamHostEvent,
   subscriptionEvent,
   chatroomUpdatedEvent,
+  userBannedEvent,
 }
 
 class KickEvent {
