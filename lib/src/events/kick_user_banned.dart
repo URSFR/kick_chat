@@ -26,7 +26,7 @@ class KickUserBanned extends KickEvent {
 }
 
 class Data {
-  final int id;
+  final String id;
   final User user;
   final User bannedBy;
   final String expiresAt;
