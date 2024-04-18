@@ -9,6 +9,7 @@ enum TypeEvent {
   giftedSubscriptionsEvent,
   pinnedMessageCreatedEvent,
   pollUpdateEvent,
+  messageDeletedEvent,
 }
 
 class KickEvent {

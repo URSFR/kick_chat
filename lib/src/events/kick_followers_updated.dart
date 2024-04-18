@@ -26,7 +26,7 @@ class KickFollowersUpdated extends KickEvent {
 }
 
 class Data {
-  final int followersCount;
+  final dynamic followersCount;
   final int epochTimeLastFollow;
 
   Data({
