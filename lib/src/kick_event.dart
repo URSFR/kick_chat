@@ -5,6 +5,10 @@ enum TypeEvent {
   subscriptionEvent,
   chatroomUpdatedEvent,
   userBannedEvent,
+  chatroomClearEvent,
+  giftedSubscriptionsEvent,
+  pinnedMessageCreatedEvent,
+  pollUpdateEvent,
 }
 
 class KickEvent {

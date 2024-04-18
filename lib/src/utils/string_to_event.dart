@@ -14,6 +14,14 @@ TypeEvent? stringToEvent(String s) {
       return TypeEvent.streamHostEvent;
     case 'App\\Events\\UserBannedEvent':
       return TypeEvent.userBannedEvent;
+    case 'App\\Events\\ChatroomClearEvent':
+      return TypeEvent.chatroomClearEvent;
+    case 'App\\Events\\GiftedSubscriptionsEvent':
+      return TypeEvent.giftedSubscriptionsEvent;
+    case 'App\\Events\\PinnedMessageCreatedEvent':
+      return TypeEvent.pinnedMessageCreatedEvent;
+    case 'App\\Events\\PollUpdateEvent':
+      return TypeEvent.pollUpdateEvent;
     default:
       return null;
   }
