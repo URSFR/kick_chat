@@ -1,7 +1,8 @@
 name: kick_chat
 description: kick_chat allows you to read a Kick chat.
 version: 1.0.0
-homepage:
+homepage: https://github.com/LezdCS/kick_chat
+repository: https://github.com/LezdCS/kick_chat
 
 environment:
   sdk: '>=3.1.4 <4.0.0'
