@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:kick_chat/src/events/kick_chatroom_cleart.dart';
+import 'package:kick_chat/src/events/kick_chatroom_clear.dart';
 import 'package:kick_chat/src/events/kick_chatroom_update.dart';
 import 'package:kick_chat/src/events/kick_followers_updated.dart';
 import 'package:kick_chat/src/events/kick_gifted_subscriptions.dart';
