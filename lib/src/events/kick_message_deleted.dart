@@ -26,7 +26,7 @@ class KickMessageDeleted extends KickEvent {
 }
 
 class Data {
-  final int id;
+  final String id;
   final Message message;
 
   Data({
