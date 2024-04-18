@@ -26,7 +26,7 @@ class KickFollowersUpdated extends KickEvent {
 }
 
 class Data {
-  final dynamic followersCount;
+  final int followersCount;
   final int epochTimeLastFollow;
 
   Data({
@@ -36,7 +36,7 @@ class Data {
 
   factory Data.fromJson(Map<String, dynamic> map) {
     return Data(
-      followersCount: map['followersCount'],
+      followersCount: int.parse(map['followersCount'].toString()),
       epochTimeLastFollow: map['created_at'],
     );
   }
