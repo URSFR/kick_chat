@@ -22,7 +22,7 @@ TypeEvent? stringToEvent(String s) {
       return TypeEvent.pinnedMessageCreatedEvent;
     case 'App\\Events\\PollUpdateEvent':
       return TypeEvent.pollUpdateEvent;
-    case 'App\\Events\\App\\Events\\MessageDeletedEvent':
+    case 'App\\Events\\MessageDeletedEvent':
       return TypeEvent.messageDeletedEvent;
     default:
       return null;
