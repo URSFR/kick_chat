@@ -27,7 +27,7 @@ class KickStreamHost extends KickEvent {
 
 class Data {
   final int chatroomId;
-  final int optionalMessage;
+  final String optionalMessage;
   final int numberViewers;
   final String hostUsername;
 
