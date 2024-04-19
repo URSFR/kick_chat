@@ -9,3 +9,7 @@ Add exports
 ## 1.0.2
 
 User agents for Kick API
+
+## 1.0.3
+
+Fix stream host model
