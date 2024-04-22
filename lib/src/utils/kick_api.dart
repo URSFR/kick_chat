@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:flutter/foundation.dart';
@@ -12,7 +13,10 @@ class KickApi {
     var dio = Dio();
 
     try {
-      String? userAgent = FkUserAgent.webViewUserAgent;
+      String? userAgent;
+      if (Platform.isAndroid || Platform.isIOS) {
+        userAgent = FkUserAgent.webViewUserAgent;
+      }
       if (userAgent != null) {
         dio.options.headers['User-Agent'] = userAgent;
       }

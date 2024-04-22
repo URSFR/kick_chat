@@ -13,3 +13,7 @@ User agents for Kick API
 ## 1.0.3
 
 Fix stream host model
+
+## 1.0.4
+
+add an init for FkUserAgent

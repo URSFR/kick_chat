@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kick_chat/kick_chat.dart';
 import 'package:web_socket_channel/io.dart';
@@ -24,9 +26,16 @@ class KickChat {
     this.onError,
   });
 
+  static Future init() async {
+    if(!Platform.isAndroid && !Platform.isIOS) {
+      return;
+    }
+    await FkUserAgent.init();
+  }
+
   Future<void> connect() async {
     userDetails = await KickApi.getUserDetails(username);
-    if(userDetails == null) {
+    if (userDetails == null) {
       return;
     }
 
