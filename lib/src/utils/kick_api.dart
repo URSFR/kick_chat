@@ -15,7 +15,7 @@ class KickApi {
     try {
       String? userAgent;
       if (Platform.isAndroid || Platform.isIOS) {
-        userAgent = FkUserAgent.webViewUserAgent;
+        userAgent = FkUserAgent.userAgent;
       }
       if (userAgent != null) {
         dio.options.headers['User-Agent'] = userAgent;

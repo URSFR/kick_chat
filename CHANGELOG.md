@@ -17,3 +17,8 @@ Fix stream host model
 ## 1.0.4
 
 add an init for FkUserAgent
+
+## 1.0.5
+
+Use userAgent instead of WebviewUserAgent
+
