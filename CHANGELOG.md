@@ -22,3 +22,6 @@ add an init for FkUserAgent
 
 Use userAgent instead of WebviewUserAgent
 
+## 1.0.6
+
+Fix user banned

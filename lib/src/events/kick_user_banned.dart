@@ -13,7 +13,7 @@ class KickUserBanned extends KickEvent {
 
   factory KickUserBanned.fromJson(Map<String, dynamic> map) {
     return KickUserBanned(
-      event: TypeEvent.subscriptionEvent,
+      event: TypeEvent.userBannedEvent,
       data: Data.fromJson(jsonDecode(map['data'])),
       channel: map['channel'],
     );
