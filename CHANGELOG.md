@@ -29,3 +29,7 @@ Fix user banned
 ## 1.0.7
 
 Fix user banned type
+
+# 1.0.8
+
+fix chatroom clear type

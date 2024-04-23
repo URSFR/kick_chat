@@ -26,7 +26,7 @@ class KickChatroomClear extends KickEvent {
 }
 
 class Data {
-  final int id;
+  final String id;
 
   Data({
     required this.id,
