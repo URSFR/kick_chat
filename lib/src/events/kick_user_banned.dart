@@ -29,7 +29,7 @@ class Data {
   final String id;
   final User user;
   final User bannedBy;
-  final String expiresAt;
+  final String? expiresAt;
 
   Data({
     required this.id,
