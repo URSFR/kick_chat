@@ -37,3 +37,7 @@ fix chatroom clear type
 # 1.1.0
 
 Get 7TV emotes
+
+## 1.1.1
+
+Bump depedencies
