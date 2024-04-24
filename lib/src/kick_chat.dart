@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:api_7tv/api_7tv.dart';
 import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kick_chat/kick_chat.dart';
@@ -13,6 +14,7 @@ class KickChat {
   StreamSubscription? _streamSubscription;
 
   KickUser? userDetails;
+  List seventvEmotes = [];
 
   Function()? onDone;
   final Function? onError;
@@ -38,6 +40,10 @@ class KickChat {
     if (userDetails == null) {
       return;
     }
+
+    // get channel 7tv emotes
+    List result = await SeventvApi.getKickChannelEmotes(userDetails!.userId.toString()) ?? [];
+    seventvEmotes.addAll(result);
 
     _webSocketChannel = IOWebSocketChannel.connect(
         "wss://ws-us2.pusher.com/app/eb1d5f283081a78b932c?protocol=7&client=js&version=7.6.0&flash=false");

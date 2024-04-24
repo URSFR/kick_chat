@@ -1,3 +1,4 @@
+import 'package:api_7tv/api_7tv.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -23,5 +24,15 @@ void main() {
     await KickChat.init();
     KickUser? userDetails = await KickApi.getUserDetails('xqc');
     expect(668, userDetails?.id);
+  });
+
+  test('Get 7TV Kick channel emotes', () async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await KickChat.init();
+    KickUser? userDetails = await KickApi.getUserDetails('xqc');
+    if(userDetails == null) throw Exception('User details not found');
+    List? emotes = await SeventvApi.getKickChannelEmotes(userDetails.userId.toString()) ?? [];
+    debugPrint(emotes.length.toString());
+    expect(emotes.length, greaterThanOrEqualTo(1));
   });
 }

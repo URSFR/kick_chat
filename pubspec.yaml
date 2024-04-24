@@ -14,6 +14,7 @@ dependencies:
   web_socket_channel: ^2.4.0
   dio: ^5.3.4
   fk_user_agent: ^2.1.0
+  api_7tv: ^0.0.2
 
 dev_dependencies:
   flutter_test:
