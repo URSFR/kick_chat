@@ -33,3 +33,7 @@ Fix user banned type
 # 1.0.8
 
 fix chatroom clear type
+
+# 1.1.0
+
+Get 7TV emotes
