@@ -41,3 +41,7 @@ Get 7TV emotes
 ## 1.1.1
 
 Bump depedencies
+
+## 1.2.0
+
+Bump depedencies
