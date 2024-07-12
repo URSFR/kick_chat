@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd896f57-a8c4-4a7c-ba84-48cc6f71cdf3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/web_socket/web_socket_channel_mobile.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/web_socket/web_socket_channel_stub.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/web_socket/web_socket_channel_web.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kick_chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kick_chat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/kick_chat.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/kick_chat.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,7 +49,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/projectos/testtwitchchat",
+    "last_opened_file_path": "C:/projectos/kick_chat",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
