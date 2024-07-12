@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:io';
+import 'package:universal_io/io.dart';
 
 import 'package:api_7tv/api_7tv.dart';
 import 'package:fk_user_agent/fk_user_agent.dart';
