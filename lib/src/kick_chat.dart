@@ -29,9 +29,6 @@ class KickChat {
   });
 
   static Future init() async {
-    if(!Platform.isAndroid && !Platform.isIOS) {
-      return;
-    }
     await FkUserAgent.init();
   }
 
