@@ -43,7 +43,7 @@ class KickChat {
     seventvEmotes.addAll(result);
 
     _webSocketChannel = PlatformWebSocketChannel.connect(
-        "wss://ws-us2.pusher.com/app/32cbd69e4b950bf97679?protocol=7&client=js&version=7.6.0&flash=false");
+        "wss://ws-us2.pusher.com/app/32cbd69e4b950bf97679?protocol=7&client=js&version=8.4.0-rc2&flash=false");
 
     _webSocketChannel?.sink.add(
         '{"event":"pusher:subscribe","data":{"auth":"","channel":"channel.${userDetails!.id}"}}');
